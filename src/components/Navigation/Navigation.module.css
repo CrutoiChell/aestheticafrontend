@@ -1,0 +1,266 @@
+.nav {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 1px 8px var(--shadow);
+}
+
+@media (prefers-color-scheme: dark) {
+  .nav {
+    background: rgba(15, 23, 42, 0.95);
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  gap: 1rem;
+}
+
+/* ── Logo ── */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  flex-shrink: 0;
+}
+
+.logo svg {
+  color: var(--primary);
+  animation: rotate 20s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes rotate {
+  to { transform: rotate(360deg); }
+}
+
+.logoText { font-weight: 700; }
+
+/* ── Mobile button ── */
+.mobileMenuButton {
+  display: none;
+  background: none;
+  border: none;
+  padding: 0.4rem;
+  cursor: pointer;
+  color: var(--text);
+  z-index: 1001;
+}
+
+/* ── Menu ── */
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* ── Nav link ── */
+.navLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.75rem;
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.15s, background 0.15s;
+  white-space: nowrap;
+}
+
+.navLink:hover {
+  color: var(--text);
+  background: var(--surface);
+}
+
+/* ── Create button ── */
+.createButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.875rem;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: filter 0.15s, transform 0.15s;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+  white-space: nowrap;
+}
+
+.createButton:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+/* ── User chip (avatar + name) ── */
+.userChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0.75rem 0.3rem 0.3rem;
+  border-radius: 50px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: border-color 0.15s, background 0.15s;
+  white-space: nowrap;
+  max-width: 160px;
+}
+
+.userChip:hover {
+  border-color: var(--primary);
+  background: var(--background);
+}
+
+.chipAvatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.chipAvatarImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.chipInitial {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: white;
+}
+
+.chipName {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ── Logout ── */
+.logoutButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+  flex-shrink: 0;
+}
+
+.logoutButton:hover {
+  border-color: var(--error);
+  color: var(--error);
+  background: rgba(239, 68, 68, 0.06);
+}
+
+/* ── Register ── */
+.registerButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.875rem;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: filter 0.15s;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+  white-space: nowrap;
+}
+
+.registerButton:hover {
+  filter: brightness(1.08);
+}
+
+.overlay { display: none; }
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .mobileMenuButton { display: flex; }
+
+  .menu {
+    position: fixed;
+    top: 64px;
+    right: -100%;
+    width: 260px;
+    height: calc(100vh - 64px);
+    background: var(--background);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 1.5rem 1rem;
+    box-shadow: -4px 0 20px var(--shadow);
+    transition: right 0.25s ease;
+    overflow-y: auto;
+  }
+
+  .menuOpen { right: 0; }
+
+  .navLink {
+    padding: 0.875rem 1rem;
+    border-bottom: 1px solid var(--border);
+    border-radius: 0;
+  }
+
+  .createButton, .registerButton {
+    margin-top: 0.75rem;
+    justify-content: center;
+  }
+
+  .userChip {
+    margin-top: 0.75rem;
+    max-width: 100%;
+    border-radius: 10px;
+    padding: 0.6rem 0.875rem;
+  }
+
+  .logoutButton {
+    margin-top: 0.5rem;
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+  }
+
+  .overlay {
+    display: block;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 999;
+  }
+}

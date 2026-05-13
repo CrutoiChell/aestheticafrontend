@@ -1,0 +1,23 @@
+'use client';
+
+import { ReactNode } from 'react';
+import Navigation from '../Navigation/Navigation';
+import styles from './Layout.module.css';
+
+interface LayoutProps {
+  children: ReactNode;
+}
+
+export default function Layout({ children }: LayoutProps) {
+  return (
+    <div className={styles.layout}>
+      <Navigation />
+      <main className={styles.main}>{children}</main>
+      <footer className={styles.footer}>
+        <div className={styles.footerContent}>
+          <p>&copy; 2026 Aesthetica. Все права защищены.</p>
+        </div>
+      </footer>
+    </div>
+  );
+}
