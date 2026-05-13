@@ -1,0 +1,32 @@
+.grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 560px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  border-radius: 10px;
+  border: 1px dashed var(--border);
+  background: var(--surface);
+  padding: 3rem 1.5rem;
+  text-align: center;
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+}
