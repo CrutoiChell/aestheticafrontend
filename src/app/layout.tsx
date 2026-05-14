@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Aesthetica — Платформа художественных выставок",
+  title: "Эстетика — Платформа художественных выставок",
   description: "Создавайте и исследуйте выставки из галерей по всему миру",
   icons: {
     icon: "/icon.svg",

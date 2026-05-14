@@ -69,7 +69,7 @@ export default function Navigation() {
       <div className={styles.container}>
         <Link href="/" className={styles.logo} onClick={closeMobileMenu}>
           <Palette size={28} />
-          <span className={styles.logoText}>Aesthetica</span>
+          <span className={styles.logoText}>Эстетика</span>
         </Link>
 
         <button

@@ -123,7 +123,7 @@ export default async function Home() {
 
       <section className={styles.features}>
         <div className={styles.container}>
-          <h2 className={styles.sectionTitle}>Почему Aesthetica?</h2>
+          <h2 className={styles.sectionTitle}>Почему Эстетика?</h2>
           <div className={styles.featureGrid}>
             <div className={styles.featureCard}>
               <div className={styles.featureIcon}><Palette size={48} /></div>

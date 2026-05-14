@@ -67,7 +67,7 @@ export default function LoginPage() {
         <div className={styles.leftSection}>
           <Link href="/" className={styles.logo}>
             <Sparkles size={40} />
-            <span>Aesthetica</span>
+            <span>Эстетика</span>
           </Link>
           <h1 className={styles.title}>
             Добро пожаловать <span className={styles.gradient}>обратно</span>

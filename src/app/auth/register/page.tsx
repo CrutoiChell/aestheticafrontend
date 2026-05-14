@@ -73,7 +73,7 @@ export default function RegisterPage() {
         <div className={styles.leftSection}>
           <Link href="/" className={styles.logo}>
             <Sparkles size={40} />
-            <span>Aesthetica</span>
+            <span>Эстетика</span>
           </Link>
           <h1 className={styles.title}>
             Начните свое <span className={styles.gradient}>путешествие</span>

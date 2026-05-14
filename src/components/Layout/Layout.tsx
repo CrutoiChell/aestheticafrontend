@@ -15,7 +15,7 @@ export default function Layout({ children }: LayoutProps) {
       <main className={styles.main}>{children}</main>
       <footer className={styles.footer}>
         <div className={styles.footerContent}>
-          <p>&copy; 2026 Aesthetica. Все права защищены.</p>
+          <p>&copy; 2026 Эстетика. Все права защищены.</p>
         </div>
       </footer>
     </div>
