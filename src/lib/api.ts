@@ -4,7 +4,7 @@
  * All components should use this instead of hardcoding http://localhost:3001.
  */
 
-export const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/api';
+export const API_URL = (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001').replace(/\/+$/, '') + '/api';
 
 export interface ApiError {
   message: string;

@@ -37,8 +37,8 @@ export function exhibitionImageUrls(
  */
 
 function apiOrigin(): string {
-  const base = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/api';
-  return base.replace(/\/?api\/?$/i, '').replace(/\/$/, '') || 'http://localhost:3001';
+  const base = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001';
+  return base.replace(/\/+$/, '');
 }
 
 export function resolveMediaUrl(url: string | undefined | null): string {
